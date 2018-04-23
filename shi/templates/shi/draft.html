@@ -1,0 +1,13 @@
+{% extends 'shi/base.html' %}
+
+{% block content %}
+    {% for shi in shi %}
+        <div class="shi">
+            <p class="date">created: {{ shi.created_date|date:'d-m-Y' }}</p>
+            <h1><a href="{% url 'shi:detail' shi.id %}">{{ shi.input_text }}</a></h1>
+            <p>{{ shi.output_text|truncatechars:200|linebreaksbr }}</p>
+        </div>
+    {% empty %}
+        <p>아직 쓰여진 시가 없습니다. :(</p>
+    {% endfor %}
+{% endblock %}

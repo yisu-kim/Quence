@@ -1,0 +1,10 @@
+{% extends 'shi/base.html' %}
+
+{% block content %}
+    <h1>Quence와 함께 시 쓰기</h1>
+    <form method="POST" class="shi-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default"
+                onclick="this.disabled=true;">한 줄 쓰기</button>
+    </form>
+{% endblock %}

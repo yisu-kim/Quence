@@ -1,0 +1,31 @@
+{% extends 'shi/base.html' %}
+
+{% block content %}
+<div class="shi">
+    <h1>{{ shi.input_text }}</h1>
+    <p>{{ shi.output_text|linebreaksbr }}</p>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="{% url 'shi:select' shi.id %}" method="post" onsubmit="select.disabled=true;">
+        {% csrf_token %}
+        {% if shi.choice_set.count == 3 %}
+            {% for choice in shi.choice_set.all %}
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}"/>
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br/>
+            {% endfor %}
+            <input type="submit" value="선택" name="select"/>
+        {% else %}
+            {% if shi.published_date %}
+                <div class="date">
+                    {{ shi.published_date }}
+                </div>
+                {% else %}
+                    <a class="btn btn-default" href="{% url 'shi:make' shi.id %}"
+                       onclick="style.display='none';">만들기</a>
+                    <a class="btn btn-default" href="{% url 'shi:publish' shi.id %}">출판하기</a>
+                {% endif %}
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

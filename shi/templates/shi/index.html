@@ -1,0 +1,17 @@
+{% extends 'shi/base.html' %}
+
+{% block content %}
+    {% if latest_shi_list %}
+        {% for shi in latest_shi_list %}
+            <div class="shi">
+                <div class="date">
+                    {{ shi.published_date }}
+                </div>
+                <h1><a href="{% url 'shi:detail' shi.id %}">{{ shi.input_text }}</a></h1>
+                <p>{{ shi.output_text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+    <p>발행된 시가 없습니다.</p>
+    {% endif %}
+{% endblock %}

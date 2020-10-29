@@ -44,7 +44,7 @@ Sequence to Sequence 모델을 사용한 인공지능 시 짓기 체험 웹페�
 5. tensorflow 1.4.0 설치
 
    ```
-   python3 -m pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.4.0-py3-none-any.wh
+   python3 -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.4.0-py3-none-any.wh
    ```
 
 6. requirements의 패키지 설치

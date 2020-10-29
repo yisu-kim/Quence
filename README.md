@@ -56,19 +56,19 @@ Sequence to Sequence 모델을 사용한 인공지능 시 짓기 체험 웹페�
 7. migrate
 
    ```
-   python3.6 manage.py migrate
+   python3 manage.py migrate
    ```
 
 8. static 설정
 
    ```
-   python3.6 manage.py collectstatic
+   python3 manage.py collectstatic
    ```
 
 9. 서버 실행
 
    ```
-   python3.6 manage.py runserver
+   python3 manage.py runserver
    ```
 
 ## 사용 방법

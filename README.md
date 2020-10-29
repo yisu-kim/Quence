@@ -8,9 +8,11 @@ Sequence to Sequence 모델을 사용한 인공지능 시 짓기 체험 웹페�
 - python 3.6
 - python3-pip
 - python3-venv
-- tensorflow 1.4.0
+- tensorflow < 2
 - Java 8
 - git-lfs
+
+그 외 `requirements.txt` 파일 참고
 
 ## 환경 변수 설정
 
@@ -53,7 +55,7 @@ Sequence to Sequence 모델을 사용한 인공지능 시 짓기 체험 웹페�
    pip3 install -r requirements.txt
    ```
 
-7. migrate
+7. 마이그레이션
 
    ```
    python3 manage.py migrate

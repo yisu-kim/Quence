@@ -8,7 +8,7 @@ Sequence to Sequence 모델을 사용한 인공지능 시 짓기 체험 웹페�
 - python 3.6
 - python3-pip
 - python3-venv
-- tensorflow < 2
+- tensorflow 1
 - Java 8
 - git-lfs
 
@@ -43,31 +43,26 @@ Sequence to Sequence 모델을 사용한 인공지능 시 짓기 체험 웹페�
    source myvenv/bin/activate
    ```
 
-5. tensorflow 1.4.0 설치
+5. 가상환경에 requirements의 패키지 설치
 
    ```
-   python3 -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.4.0-py3-none-any.wh
-   ```
-
-6. requirements의 패키지 설치
-
-   ```
+   python3 -m pip install --upgrade pip
    pip3 install -r requirements.txt
    ```
 
-7. 마이그레이션
+6. Django 마이그레이션
 
    ```
    python3 manage.py migrate
    ```
 
-8. static 설정
+7. Django static 설정
 
    ```
    python3 manage.py collectstatic
    ```
 
-9. 서버 실행
+8. Django 서버 실행
 
    ```
    python3 manage.py runserver
